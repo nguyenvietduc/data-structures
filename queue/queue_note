@@ -1,0 +1,17 @@
+Based on "Data Structures and Algorithms"
+by
+Alfred V. Aho
+John E. Hopcroft
+Jeffrey d. Ullman
+
+QUEUES
+
+Operations on Queues:
+- MAKENULL(Q)	makes queue Q an empty list
+- FRONT(Q)		returns the first element on queue Q
+				RETRIEVE(FIRST(Q),Q)
+- ENQUEUE(x,Q)	inserts elements x at the end of queue Q
+				INSERT(x,END(Q),Q)
+- DEQUEUE(Q)	deletes the first element of Q
+				DELETE(FIRST(Q),Q)
+- EMPTY(Q)		returns true iff Q is an empty queue
