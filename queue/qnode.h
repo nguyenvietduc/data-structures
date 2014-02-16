@@ -10,6 +10,7 @@ private:
 	QNode* next;
 public:
 	QNode(int);
+	~QNode();
 	int get_value() { return value; }
 };
 

@@ -3,19 +3,22 @@
 #ifndef __PQUEUE_H_
 #define __PQUEUE_H_
 
+#include "qnode.h"
+
 class PQueue {
 private:
-	QNode* front;
-	QNode* rear;
+	QNode* head;
+	QNode* tail;
 public:
-	QNode();
-	~QNode();
+	PQueue();
+	~PQueue();
 
 	void makenull(void);
 	QNode* front(void);
-	QNode* dequeue(void);
+	int dequeue(void);
 	int enqueue(int);
 	bool empty(void);
+	void print(void);
 };
 
 #endif
