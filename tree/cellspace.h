@@ -8,7 +8,7 @@
 
 class Cellspace {
 private:
-	TNode* cells;
+	TNode* nodes;
 public:
 	Cellspace();
 	~Cellspace();

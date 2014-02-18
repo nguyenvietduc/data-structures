@@ -5,9 +5,9 @@
 using namespace std;
 
 Cellspace::Cellspace() {
-	cells = new TNode[MAX_NODES];
+	nodes = new TNode[MAX_NODES];
 }
 
 Cellspace::~Cellspace() {
-	delete cells;
+	delete nodes;
 }
