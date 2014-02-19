@@ -8,8 +8,8 @@ private:
 	int root;
 	Cellspace cellspace;
 public:
-	Cellspace();
-	~Cellspace();
+	CSTree();
+	~CSTree();
 };
 
 #endif
