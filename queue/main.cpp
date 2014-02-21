@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 	PQueue* integer_queue = new PQueue;
+	cout << "Queue Empty? " << integer_queue->empty() << endl;
 	integer_queue->print();
 	integer_queue->enqueue(1);
 	integer_queue->enqueue(2);
@@ -18,7 +19,8 @@ int main() {
 	QNode* node_2 = integer_queue->front();
 	integer_queue->print();
 
-	cout << node_1 << " " << node_2->get_value() << endl;
+	cout << "Value of node_1: " << node_1 << ", value of node_2: " << node_2->get_value() << endl;
+	cout << "Queue Empty? " << integer_queue->empty() << endl;
 
 	return 0;
 }

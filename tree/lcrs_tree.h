@@ -5,11 +5,20 @@
 
 class CSTree {
 private:
-	int root;
+	int the_root;
 	Cellspace cellspace;
 public:
 	CSTree();
 	~CSTree();
+
+	void makenull(void);
+	int root();
+	int parent(int);
+	int leftmost_child(int);
+	int right_sibling(int);
+	int label(int);
+	int create(int,)
+
 };
 
 #endif

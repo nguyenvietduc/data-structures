@@ -2,7 +2,7 @@
 #include "lcrs_tree.h"
 
 CSTree::CSTree() {
-	root = -1;
+	the_root = -1;
 	cellspace = new Cellspace;
 }
 
