@@ -5,14 +5,22 @@
 class TNode {
 	friend class Cellspace;
 private:
-	int value;
+	char label;
 	int leftmost_child;
-	int right_ribling;
+	int right_sibling;
+	int parent;
 public:
-	TNode(int);
-	int get_value() { return value; }
+	TNode();
+	TNode(char);
+	~TNode();
+	char get_label() { return label; }
+	void set_label(char);
 	int get_leftmost_child() { return leftmost_child; }
-	int get_right_sibling() { return right_ribling; }
+	void set_leftmost_child(int);
+	int get_right_sibling() { return right_sibling; }
+	void set_right_sibling(int);
+	int get_parent() { return parent; }
+	void set_parent(int);
 };
 
 #endif

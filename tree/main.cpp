@@ -4,8 +4,67 @@
 
 using namespace std;
 
+// Function prototypes
+char right_sibling(TREE);
+char leftmost_child(TREE);
+TREE create0(char);
+TREE create1(char,TREE);
+TREE create2(char,TREE,TREE);
+TREE create3(char,TREE,TREE,TREE);
+void print_tree(TREE);
+char parent(TREE);
+char label(TREE );
+char root(TREE);
+void makenull(TREE);
+
 // Shared cellspace of all node
 Cellspace* cellspace;
+
+
+int main() {
+	// init cellspace
+	cellspace = new Cellspace;
+
+	// Creating tree
+	TREE tm = create0('M');
+	TREE tn = create0('N');
+	TREE ti = create2('I',tm,tn);
+	TREE te = create1('E',ti);
+	TREE td = create0('D');
+	TREE tb = create2('B',td,te);
+
+	TREE tj = create0('J');
+	TREE tk = create0('K');
+	TREE tg = create2('G',tj,tk);
+
+	TREE tl = create0('L');
+	TREE th = create1('H',tl);
+
+	TREE tf = create0('F');
+	TREE tc = create3('C',tf,tg,th);
+
+	TREE ta = create2('A',tb,tc); // This is our root
+
+	// ROOT
+	cout << root(ta) << endl;
+
+	// PARENT
+	cout << "Parent of 'E' is " << parent(te) << endl;
+
+	// LEFTMOST_CHILD
+	cout << "Leftmost child of 'G' is " << leftmost_child(tg) << endl;
+
+	// RIGHT SIBLING
+	cout << "Right sibling of 'F' is " << right_sibling(tf) << endl;
+
+	// LABEL
+	cout << "Label of node th is " << label(th) << endl;
+
+	// MAKENULL
+	makenull(ta);
+
+	return 0;
+}
 
 TREE create0(char label) {
 	return cellspace->get_node(label);
@@ -24,36 +83,38 @@ TREE create2(char label, TREE t1, TREE t2) {
 	return tnew;
 }
 
+TREE create3(char label, TREE t1, TREE t2, TREE t3) {
+	TREE tnew = cellspace->get_node(label);
+	cellspace->set_parenthood(tnew,t1);
+	cellspace->set_siblinghood(t1,t2);
+	cellspace->set_siblinghood(t2,t3);
+	return tnew;
+}
+
 void print_tree(TREE ta) {
 	cellspace->print(ta);
 }
 
 char parent(TREE idx) {
-	cellspace->get_parent_of_node(idx);
+	return cellspace->get_parent_of_node(idx);
 }
 
 char root(TREE t) {
-	label(t)
+	return label(t);
 }
 
 char label(TREE node) {
 	return cellspace->get_label_of_node(node);
 }
 
-int main() {
-	// init cellspace
-	cellspace = new Cellspace;
+char leftmost_child(TREE node) {
+	return cellspace->get_leftmost_child_label(node);
+}
 
-	TREE td = create0('D');
-	TREE tb = create0('B');
-	TREE tc = create1('C',td);
-	TREE ta = create2('A',tb,tc);
+char right_sibling(TREE node) {
+	return cellspace->get_right_sibling_label(node);
+}
 
-	print_tree(ta);
-	print_tree(tc);
-
-	cout << parent(tb);
-	cout << endl;
-
-	return 0;
+void makenull(TREE root) {
+	cellspace->makenull(root);
 }

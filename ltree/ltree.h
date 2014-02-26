@@ -14,6 +14,7 @@ public:
 	~LTree();
 
 	int leftmost_child(int);
+	int parent(int);
 	int right_sibling(int);
 	int root() { return root; }
 	void makenull();

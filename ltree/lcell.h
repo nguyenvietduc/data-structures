@@ -6,19 +6,17 @@
 #define MAX_NODE 100
 
 class LCell {
-	friend class LCellspace;
-private:
-	int node_value;
-	int next;
-};
-
-class LCellspace {
 	friend class LTree;
 private:
-	LCell cellspace[MAX_NODE];
+	int cells[MAX_NODE];
+	int last;
 public:
-	LCellspace();
-	~LCellspace();
+	LCell();
+	~LCell();
+
+	int get_last() { return last; }
+	int get(int);
+	bool contains(int);
 };
 
 #endif
