@@ -22,10 +22,10 @@ public:
 	void set_siblinghood(TREE,TREE);
 	void print(TREE);
 	void print_children(TREE);
-	char get_parent_of_node(TREE);
+	TREE get_parent_of_node(TREE);
 	char get_label_of_node(TREE);
-	char get_right_sibling_label(TREE);
-	char get_leftmost_child_label(TREE);
+	TREE get_right_sibling(TREE);
+	TREE get_leftmost_child(TREE);
 	void makenull(TREE);
 };
 

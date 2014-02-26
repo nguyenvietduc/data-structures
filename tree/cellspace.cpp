@@ -59,25 +59,20 @@ void Cellspace::print_children(TREE node_idx) {
 	cout << endl;
 }
 
-char Cellspace::get_parent_of_node(TREE idx) {
-	int parent_idx = nodes[idx].get_parent();
-	if (parent_idx == -1)
-		return 0;
-	return nodes[parent_idx].get_label();
+TREE Cellspace::get_parent_of_node(TREE idx) {
+	return nodes[idx].get_parent();
 }
 
 char Cellspace::get_label_of_node(TREE t) {
 	return nodes[t].get_label();
 }
 
-char Cellspace::get_leftmost_child_label(TREE t) {
-	int lc = nodes[t].get_leftmost_child();
-	return nodes[lc].get_label();
+TREE Cellspace::get_leftmost_child(TREE t) {
+	return nodes[t].get_leftmost_child();
 }
 
-char Cellspace::get_right_sibling_label(TREE t) {
-	int rs = nodes[t].get_right_sibling();
-	return nodes[rs].get_label();
+TREE Cellspace::get_right_sibling(TREE t) {
+	return nodes[t].get_right_sibling();
 }
 
 void Cellspace::makenull(TREE root) {

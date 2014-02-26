@@ -5,19 +5,19 @@
 using namespace std;
 
 // Function prototypes
-char right_sibling(TREE);
-char leftmost_child(TREE);
+TREE right_sibling(TREE);
+TREE leftmost_child(TREE);
 TREE create0(char);
 TREE create1(char,TREE);
 TREE create2(char,TREE,TREE);
 TREE create3(char,TREE,TREE,TREE);
 void print_tree(TREE);
-char parent(TREE);
+TREE parent(TREE);
 char label(TREE );
 char root(TREE);
 void makenull(TREE);
 
-// Shared cellspace of all node
+// Shared cellspace of all trees
 Cellspace* cellspace;
 
 
@@ -49,13 +49,13 @@ int main() {
 	cout << root(ta) << endl;
 
 	// PARENT
-	cout << "Parent of 'E' is " << parent(te) << endl;
+	cout << "Parent of 'E' is " << label(parent(te)) << endl;
 
 	// LEFTMOST_CHILD
-	cout << "Leftmost child of 'G' is " << leftmost_child(tg) << endl;
+	cout << "Leftmost child of 'G' is " << label(leftmost_child(tg)) << endl;
 
 	// RIGHT SIBLING
-	cout << "Right sibling of 'F' is " << right_sibling(tf) << endl;
+	cout << "Right sibling of 'F' is " << label(right_sibling(tf)) << endl;
 
 	// LABEL
 	cout << "Label of node th is " << label(th) << endl;
@@ -95,7 +95,7 @@ void print_tree(TREE ta) {
 	cellspace->print(ta);
 }
 
-char parent(TREE idx) {
+TREE parent(TREE idx) {
 	return cellspace->get_parent_of_node(idx);
 }
 
@@ -107,12 +107,12 @@ char label(TREE node) {
 	return cellspace->get_label_of_node(node);
 }
 
-char leftmost_child(TREE node) {
-	return cellspace->get_leftmost_child_label(node);
+TREE leftmost_child(TREE node) {
+	return cellspace->get_leftmost_child(node);
 }
 
-char right_sibling(TREE node) {
-	return cellspace->get_right_sibling_label(node);
+TREE right_sibling(TREE node) {
+	return cellspace->get_right_sibling(node);
 }
 
 void makenull(TREE root) {
