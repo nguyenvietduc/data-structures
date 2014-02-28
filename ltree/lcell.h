@@ -3,20 +3,17 @@
 #ifndef __LCELL_H_
 #define __LCELL_H_
 
-#define MAX_NODE 100
-
 class LCell {
-	friend class LTree;
 private:
-	int cells[MAX_NODE];
-	int last;
+	int value;
+	int next;
 public:
 	LCell();
+	LCell(int,int);
 	~LCell();
 
-	int get_last() { return last; }
-	int get(int);
-	bool contains(int);
+	int get_value() { return value; }
+	int get_next() { return next; }
 };
 
 #endif

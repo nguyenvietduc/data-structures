@@ -5,23 +5,19 @@
 
 #include "lcell.h"
 
+#define MAX_NODES 100
+
 class LTree {
 private:
-	LCellspace header[MAX_NODES];
-	int root;  // store root explicitly here
+	int root;
+	LCell cellspace[MAX_NODES];
+	int headers[MAX_NODES];
 public:
 	LTree();
+	LTree(LCell[]);
 	~LTree();
 
-	int leftmost_child(int);
-	int parent(int);
-	int right_sibling(int);
-	int root() { return root; }
-	void makenull();
-	void create0();
-	void create1();
-	void create2();
-	void create3();
+	void create0(int);
 
 };
 
