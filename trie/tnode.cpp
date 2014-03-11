@@ -47,6 +47,6 @@ TNode* TNode::get_child_node(char c) {
 	return current_child;
 }
 
-int TNode::set_end_of_word(bool _eow) {
-	eow = _eow;
+int TNode::set_end_of_word(bool eow_input) {
+	eow = eow_input;
 }
