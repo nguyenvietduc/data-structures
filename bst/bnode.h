@@ -13,6 +13,9 @@ public:
 	BNode(int);
 	~BNode();
 	int get_value() { return value; }
+	BNode* get_left_child() { return left_child; }
+	BNode* get_right_child() { return right_child; }
+	void set_value(int);
 };
 
 #endif

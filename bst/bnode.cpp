@@ -12,3 +12,7 @@ BNode::BNode(int data) {
 BNode::~BNode() {
 	// TODO deallocate memory here
 }
+
+void BNode::set_value(int x) {
+	value = x;
+}
