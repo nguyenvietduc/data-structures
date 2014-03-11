@@ -1,4 +1,0 @@
-/* Note on BST */
-
-A binary tree of n nodes is complete if all nodes, except those at the lowest level, have two chidlren.
-
