@@ -7,6 +7,8 @@
 class BST {
 private:
 	BNode* root;
+	void print_paths_recursive(BNode*,int[],int);
+	void print_array(int[],int);
 public:
 	BST();
 	~BST();
@@ -17,6 +19,7 @@ public:
 	BNode* min();
 	int deletemin();
 	int deletemin(BNode**);
+	void print();
 };
 
 #endif

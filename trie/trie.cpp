@@ -50,7 +50,6 @@ int Trie::search(char word[]) {
 	return (current != NULL && current->end_of_word());
 }
 
-// tmp function, to be removed
 void Trie::print() {
 	char word[100];
 	print_words_recursive(root, word, 0);

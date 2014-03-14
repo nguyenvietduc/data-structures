@@ -11,5 +11,6 @@ int main() {
 	bst->insert(7);
 	bst->insert(-10);
 	bst->insert(4);
+	bst->print();
 	return 0;
 }

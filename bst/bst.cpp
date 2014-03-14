@@ -147,3 +147,27 @@ void BST::remove(int input) {
 		else tmp->right_child = current;
 	}
 }
+
+void BST::print() {
+	int path[100];
+	print_paths_recursive(root, path, 0);
+}
+
+void BST::print_paths_recursive(BNode* root, int path[], int len) {
+	if (root == NULL)
+		return;
+
+	path[len++] = root->get_value();
+	if (root->get_left_child() == NULL && root->get_right_child() == NULL)
+		print_array(path, len);
+	else {
+		print_paths_recursive(root->get_left_child(), path, len);
+		print_paths_recursive(root->get_right_child(), path, len);
+	}
+}
+
+void BST::print_array(int path[], int len) {
+	for (int i=0; i<len; ++i)
+		cout << path[i] << ' ';
+	cout << endl;
+}
